@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# media — hosted on Supabase Storage, not in git
+/public/media/
+
+# local-only configs
+.mcp.json
+firebase-debug.log
