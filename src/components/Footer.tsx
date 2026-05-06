@@ -45,19 +45,19 @@ export default function Footer() {
     <footer className="border-t border-[#222] px-6 py-10 md:px-10">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div>
-          <span className="text-lg font-bold tracking-tighter uppercase">
+          <span className="fx-pixel text-lg font-bold tracking-tighter uppercase">
             3rdwrld
           </span>
           <p className="text-[#666] text-xs mt-1">
-            Digital intersection of film &amp; music
+            The reflection of our fractured culture
           </p>
         </div>
         <div className="flex gap-6 text-xs uppercase tracking-[0.15em] text-[#888]">
           <Link href="/explore" className="hover:text-white transition-colors">
             Explore
           </Link>
-          <Link href="/agency" className="hover:text-white transition-colors">
-            Agency
+          <Link href="/studio" className="hover:text-white transition-colors">
+            Creative Studio
           </Link>
           <Link href="/about" className="hover:text-white transition-colors">
             About
@@ -78,7 +78,7 @@ export default function Footer() {
           ))}
         </div>
         <p className="text-[#444] text-[10px] uppercase tracking-wider">
-          &copy; {new Date().getFullYear()} 3rdwrld. All rights reserved.
+          &copy; {new Date().getFullYear()} 3rdwrld LLC. All rights reserved.
         </p>
       </div>
     </footer>

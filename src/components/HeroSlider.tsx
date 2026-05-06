@@ -18,9 +18,9 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    tag: "Visual",
+    tag: "Visualizer",
     title: "3RDWRLD",
-    subtitle: "Where vision meets the void",
+    subtitle: "Music given a world",
     media: getMediaPublicUrl("slide-1.mp4"),
     type: "video",
     href: "/explore",
@@ -36,9 +36,9 @@ const slides: Slide[] = [
   },
   {
     id: 3,
-    tag: "Journalism",
+    tag: "3rdwrld Archive",
     title: "KANYE'S LOST DISCOGRAPHY",
-    subtitle: "The unreleased archives, explored",
+    subtitle: "Breaking down the intersections of culture",
     media: getMediaPublicUrl("slide-3.jpeg"),
     type: "image",
     href: "/explore",
@@ -105,9 +105,9 @@ export default function HeroSlider() {
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(next, 9000);
-    return () => clearInterval(timer);
-  }, [next]);
+    const timer = setTimeout(next, 9000);
+    return () => clearTimeout(timer);
+  }, [current, next]);
 
   const slide = slides[current];
 
@@ -147,7 +147,7 @@ export default function HeroSlider() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-sm md:text-base uppercase tracking-[0.3em] text-[#888] mb-1"
+              className="fx-pixel text-sm md:text-base uppercase tracking-[0.3em] text-[#888] mb-1"
             >
               {slide.tag}
             </motion.span>

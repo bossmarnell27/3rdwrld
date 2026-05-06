@@ -5,7 +5,7 @@ import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
 import { createClient, getMediaPublicUrl } from "@/lib/supabase/browser";
 
-export default function AgencyPage() {
+export default function StudioPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -89,23 +89,19 @@ export default function AgencyPage() {
           transition={{ delay: 0.4 }}
           className="max-w-2xl"
         >
-          <p className="text-lg md:text-xl text-[#999] leading-relaxed mb-6">
-            We&apos;re not a visualizer shop. We bring taste and expertise to
-            the full creative project. Vision, marketing, promotion, creative
-            direction, videos, and everything that shapes how a record, a
-            drop, or a roster shows up in the world.
-          </p>
           <p className="text-lg md:text-xl text-[#999] leading-relaxed">
-            3rdwrld is where we sharpen that taste daily. Everything we learn
-            about what captures attention across music, film, and culture, we
-            bring back into the work we do for the people we work with.
+            3rdwrld is a creative studio built at the intersection of music,
+            film, and culture. We handle everything that shapes how an artist,
+            record, or brand shows up in the world. Visuals, direction,
+            promotion, and beyond. Our taste is curated daily. We bring it to
+            every project we touch.
           </p>
         </motion.div>
       </section>
 
       {/* Services */}
       <section className="border-t border-[#222] px-6 md:px-16 py-20 max-w-7xl mx-auto">
-        <h2 className="text-xs uppercase tracking-[0.3em] text-[#555] mb-12">
+        <h2 className="fx-clean text-xs uppercase tracking-[0.3em] text-[#555] mb-12">
           What we do
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-[#222]">
@@ -150,7 +146,7 @@ export default function AgencyPage() {
 
       {/* Proof */}
       <section className="border-t border-[#222] px-6 md:px-16 py-20 max-w-7xl mx-auto">
-        <h2 className="text-xs uppercase tracking-[0.3em] text-[#555] mb-12">
+        <h2 className="fx-clean text-xs uppercase tracking-[0.3em] text-[#555] mb-12">
           What we&apos;ve done
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-[#222]">

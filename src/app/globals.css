@@ -8,7 +8,8 @@
   --color-surface: #0a0a0a;
   --color-surface-hover: #141414;
   --color-border: #222222;
-  --font-sans: var(--font-pixel), "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+  --font-sans: var(--font-display);
   --font-mono: "SF Mono", "Fira Code", monospace;
 }
 
@@ -19,8 +20,8 @@ html {
 body {
   background: #000;
   color: #fff;
-  font-family: var(--font-pixel), "Helvetica Neue", Arial, sans-serif;
-  font-weight: 300;
+  font-family: var(--font-display);
+  font-weight: 400;
   letter-spacing: 0.005em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -93,15 +94,22 @@ body {
   animation: progress 9s linear;
 }
 
-/* Pixelated / grainy heading */
-.pixel-heading {
-  font-family: var(--font-pixel), "Helvetica Neue", Arial, sans-serif;
-  font-weight: 300;
+/* Lucida + stroke + mosaic + grain — applied to headings and tag spans */
+.fx-pixel,
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
   color: #fff;
   -webkit-text-stroke: 1px #000;
   paint-order: stroke fill;
-  text-shadow:
-    1px 1px 0 rgba(0, 0, 0, 0.5);
-  filter: url(#grain-filter);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.6);
+  filter: url(#pixel-grain);
   letter-spacing: 0.01em;
+}
+
+/* Opt-out: cancels the heading effect for elements that should stay clean. */
+.fx-clean {
+  -webkit-text-stroke: 0.5px #000;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  filter: none;
 }

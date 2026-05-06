@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
-const pixelFont = Inter({
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700"],
-  variable: "--font-pixel",
-});
 
 export const metadata: Metadata = {
   title: "3rdwrld — Digital Intersection of Film & Music",
@@ -22,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={pixelFont.variable}>
+    <html lang="en">
       <body className="noise min-h-screen flex flex-col">
         <svg
           aria-hidden
@@ -49,6 +42,40 @@ export default function RootLayout({
               />
               <feComposite in2="SourceGraphic" operator="in" result="clipped" />
               <feBlend in="SourceGraphic" in2="clipped" mode="multiply" />
+            </filter>
+            <filter id="pixel-grain">
+              <feFlood x="1" y="1" width="1" height="1" />
+              <feComposite width="2" height="2" />
+              <feTile result="tile" />
+              <feComposite
+                in="SourceGraphic"
+                in2="tile"
+                operator="in"
+                result="pixelated"
+              />
+              <feMorphology
+                in="pixelated"
+                operator="dilate"
+                radius="0.5"
+                result="thick"
+              />
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="1.4"
+                numOctaves="2"
+                seed="7"
+                result="noise"
+              />
+              <feColorMatrix
+                in="noise"
+                type="matrix"
+                values="0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 0 0.3 0"
+              />
+              <feComposite in2="thick" operator="in" result="grainOnText" />
+              <feBlend in="thick" in2="grainOnText" mode="multiply" />
             </filter>
           </defs>
         </svg>
